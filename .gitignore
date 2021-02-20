@@ -1,0 +1,16 @@
+/node_modules
+.DS_Store
+
+# Next.js
+/.next
+/build
+/out
+.vercel
+.env.*
+
+# test
+/coverage
+
+# logs
+yarn-debug.log*
+yarn-error.log*
