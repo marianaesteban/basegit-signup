@@ -3,7 +3,7 @@ const breakpoints = {
   sm: '768px',
   md: '992px',
   lg: '1280px',
-}
+};
 
 const main = {
   fontSizes: {
@@ -13,20 +13,28 @@ const main = {
     default: '"Inter", sans-serif',
   },
   fontWeights: {
-    light: 200,
-    regular: 400,
-    bold: 600,
+    light: 400,
+    regular: 500,
+    bold: 800,
   },
   colors: {
     white: '#ffffff',
     black: '#000000',
-    gray: '#8a8a8a',
-    primary: '#ead2c2',
-    secondary: '#faf7f0',
+    gray: {
+      300: '#D1D5DB',
+      500: '#6B7280',
+      600: '#4B5563',
+      700: '#374151',
+    },
+    error: '#C53030',
+    success: '#2F855A',
+  },
+  shadows: {
+    sm: '0px 1px 2px rgba(0, 0, 0, 0.05)',
   },
   device: breakpoints,
-}
+};
 
 export const themes = {
   main,
-}
+};

@@ -1,8 +1,8 @@
-import { createGlobalStyle } from 'styled-components'
-import { normalize } from 'polished'
-import { themes } from './theme'
+import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'polished';
+import { themes } from './theme';
 
-type ThemeType = typeof themes.main
+type ThemeType = typeof themes.main;
 
 const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
   ${normalize()}
@@ -14,12 +14,13 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
     color: ${({ theme }) => theme.colors.black};
     font-size: ${({ theme }) => theme.fontSizes.default};
     font-family: ${({ theme }) => theme.fontFamilies.default};
+    font-weight: ${({ theme }) => theme.fontWeights.light};
   }
 
   main {
     max-width: 1920px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 50px 16px;
   }
 
   button {
@@ -45,6 +46,6 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
     border: 0;
     padding: 0;
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
