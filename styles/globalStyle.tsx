@@ -7,8 +7,12 @@ type ThemeType = typeof themes.main;
 const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
   ${normalize()}
 
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
   body {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     background: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.black};
@@ -20,7 +24,7 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
   main {
     max-width: 1920px;
     margin: 0 auto;
-    padding: 50px 16px;
+    padding: 0 16px;
   }
 
   button {
@@ -39,12 +43,17 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
     -webkit-appearance: none; 
+    cursor: pointer;
   }
 
   button::-moz-focus-inner,
   input::-moz-focus-inner {
     border: 0;
     padding: 0;
+  }
+
+  a {
+    color: ${({ theme }) => theme.colors.gray[500]};
   }
 `;
 

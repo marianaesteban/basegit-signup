@@ -30,10 +30,6 @@ export const StyledInput = styled.input<{ state: 'default' | 'error' }>`
   ${StyledLabel} > & {
     margin-top: 4px;
   }
-
-  @media (max-width: ${({ theme }) => theme.device.md}) {
-    font-size: 16px;
-  }
 `;
 
 export const Container = styled.div`

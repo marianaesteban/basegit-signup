@@ -11,6 +11,11 @@ export const StyledButton = styled.button<{ variant?: 'primary' | 'secondary' }>
   line-height: 22px;
   text-align: center;
   box-shadow: ${({ theme }) => theme.shadows.sm};
+  transition: all 0.2s ease;
+
+  &:disabled {
+    opacity: 0.4;
+  }
 
   svg {
     width: 20px;
@@ -23,6 +28,11 @@ export const StyledButton = styled.button<{ variant?: 'primary' | 'secondary' }>
       background: ${({ theme }) => theme.colors.black};
       color: ${({ theme }) => theme.colors.white};
 
+      &:hover {
+        opacity: 0.9;
+        box-shadow: ${({ theme }) => theme.shadows.md};
+      }
+
       svg {
         color: ${({ theme }) => theme.colors.white};
       }
@@ -34,6 +44,10 @@ export const StyledButton = styled.button<{ variant?: 'primary' | 'secondary' }>
       background: ${({ theme }) => theme.colors.white};
       color: ${({ theme }) => theme.colors.gray[500]};
       border: 1px solid ${({ theme }) => theme.colors.gray[300]};
+
+      &:hover {
+        border: 1px solid ${({ theme }) => theme.colors.gray[500]};
+      }
 
       svg {
         fill: ${({ theme }) => theme.colors.gray[500]};
