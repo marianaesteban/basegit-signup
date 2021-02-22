@@ -1,22 +1,28 @@
 import styled from 'styled-components';
 import Head from 'next/head';
-import Logo from 'public/svg/logo';
+import Image from 'next/image';
 import Text from 'components/Text';
 import Divider from 'components/Divider';
 import SocialButtons from 'components/SocialButtons';
 import SignupForm from 'components/SignupForm';
 import Heading from 'components/Heading';
 
-export default function Home() {
+export default function SignUp() {
   return (
     <>
       <Head>
-        <title>Signup</title>
+        <title>Signup to BaseGit</title>
       </Head>
       <Layout>
         <SignupContainer>
           <SignupHeader>
-            <Logo className="logo" />
+            <Image
+              src="/svg/logo.svg"
+              alt="GitBase Logo"
+              width="50px"
+              height="50px"
+              className="logo"
+            />
             <Heading>Sign Up to BaseGit</Heading>
             <Text weight="light" margin="8px 0 0 0">
               BaseGit is the best way to store information.
@@ -28,8 +34,7 @@ export default function Home() {
           <SignupForm />
         </SignupContainer>
         <CoverImg className="cover-img">
-          {/* Would be ideal to have different image sizes to use srcset + sizes */}
-          <img src={require('public/img/rocket.png')} alt="" width="100%" height="100%" />
+          <Image src="/img/rocket.png" alt="" layout="fill" objectFit="cover" />
         </CoverImg>
       </Layout>
     </>
@@ -40,12 +45,17 @@ export default function Home() {
 const CoverImg = styled.div`
   overflow: hidden;
   min-height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: ${({ theme }) => theme.colors.black};
 
   img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
+  }
+
+  &:hover img {
+    transform: scale(0.9);
   }
 `;
 
@@ -69,8 +79,6 @@ const SignupHeader = styled.header`
   padding-bottom: 32px;
 
   .logo {
-    width: 50px;
-    height: 50px;
     margin-bottom: 25px;
   }
 `;

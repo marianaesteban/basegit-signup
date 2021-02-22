@@ -90,6 +90,7 @@ const SignupForm = () => {
                   setStatus('');
                   handleChange(e);
                 }}
+                autoComplete="user-email"
                 error={touched.email && errors.email}
               />
               <Field
@@ -102,6 +103,7 @@ const SignupForm = () => {
                   setStatus('');
                   handleChange(e);
                 }}
+                autoComplete="new-password"
                 error={touched.password && errors.password}
               />
               <Field
@@ -114,6 +116,7 @@ const SignupForm = () => {
                   setStatus('');
                   handleChange(e);
                 }}
+                autoComplete="confirm-password"
                 error={touched.confirmPassword && errors.confirmPassword}
               />
               <SubmitButton aria-label="Sign up" type="submit" disabled={isSubmitting}>
